@@ -75,6 +75,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      position: relative;
     }
 
     main>.main-container {
@@ -147,6 +148,7 @@
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
       border-right: none;
+      text-align: right;
     }
 
     #form #pno {
@@ -163,6 +165,11 @@
       line-height: 1.5;
       padding: 0 20px;
     }
+
+    #error-container {
+      opacity: 0;
+    }
+
     @media screen and (max-width: 600px) {
       .info-text {
         text-align: justify;
@@ -191,6 +198,7 @@
         <div>Enter the phone number you wish to chat with and click "Start Conversation".</div>
       </section>
     </div>
+    <div id="error-container"></div>
   </main>
   <footer>
     Made with ❤️ and 🎧 by <a href="https://github.com/droyson" target="_blank" rel="noopener noreferrer">@droyson</a>
@@ -210,6 +218,24 @@
 
     footer a {
       font-size: 14px;
+    }
+
+    #error-container {
+      position: absolute;
+      min-height: 40px;
+      width: 80%;
+      max-width: 300px;
+      background-color: #ff2f00bf;
+      bottom: 30%;
+      padding: 8px 16px;
+      border-radius: 5px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0px 4px 6px 1px #00000061;
+      transition: opacity 500ms ease-in-out;
     }
   </style>
 </body>
