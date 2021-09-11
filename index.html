@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <!-- Primary Meta Tags -->
+  <title>WhatsApp Connect</title>
+  <meta name="title" content="WhatsApp Connect">
+  <meta name="description"
+    content="Start a new conversation on WhatsApp without having to save the contact on the phone.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wa.droyson.xyz">
+  <meta property="og:title" content="WhatsApp Connect">
+  <meta property="og:description"
+    content="Start a new conversation on WhatsApp without having to save the contact on the phone.">
+  <meta property="og:image" content="https://wa.droyson.xyz/assets/WhatsAppConnect.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://wa.droyson.xyz">
+  <meta name="twitter:title" content="WhatsApp Connect">
+  <meta name="twitter:description"
+    content="Start a new conversation on WhatsApp without having to save the contact on the phone.">
+  <meta name="twitter:image" content="https://wa.droyson.xyz/assets/WhatsAppConnect.png">
+  <meta name="twitter:creator" content="@d_royson">
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/wa_logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/wa_logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/wa_logo/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </noscript>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    html,
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-size: 16px;
+      background-color: #ECE5DD;
+    }
+
+    header {
+      background-color: #128C7E;
+      height: 64px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0px;
+    }
+
+    header>h1 {
+      margin: 0px;
+      font-size: 2rem;
+      color: #ffffff;
+    }
+
+    main {
+      height: calc(100vh - 90px);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    main>.main-container {
+      width: 100%;
+      max-width: 1138px;
+      background-color: #ffffff;
+      height: 100%;
+    }
+
+    #form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 48px 0px;
+    }
+
+    #form noscript {
+      width: 100%;
+      text-align: center;
+    }
+
+    #form #input-container {
+      width: 100%;
+      text-align: center;
+    }
+
+    #form input {
+      padding: 4px 16px;
+      margin-bottom: 20px;
+      border-radius: 18px;
+      height: 36px;
+      border: 2px solid #b5b5b5;
+      outline: none;
+      color: #242433;
+      font-size: 1rem;
+    }
+
+    #form input::placeholder {
+      color: #b5b5b5;
+    }
+
+    #form input::-webkit-input-placeholder {
+      color: #b5b5b5;
+    }
+
+    #form input::-moz-placeholder {
+      color: #b5b5b5;
+    }
+
+    #form #s_btn {
+      padding: 16px 24px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: #25D366;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    #form #phone {
+      width: 80%;
+      max-width: 360px;
+    }
+
+    #form #cc {
+      width: 76px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-right: none;
+    }
+
+    #form #pno {
+      width: 60%;
+      max-width: 260px;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+
+    .info-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #5e5e5e;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+    @media screen and (max-width: 600px) {
+      .info-text {
+        text-align: justify;
+        padding: 0 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>WhatsApp Connect</h1>
+  </header>
+  <main>
+    <div class="main-container">
+      <form action="https://api.whatsapp.com/send/" method="get" id="form">
+        <noscript>
+          <input type="tel" name="phone" id="phone" placeholder="Enter phone number along with country code"
+            autocomplete="off">
+        </noscript>
+        <div id="input-container"></div>
+        <button type="submit" id="s_btn">Start Conversation</button>
+      </form>
+      <section class="info-text">
+        <div>Start a new conversation on WhatsApp without having to save the contact on the phone.</div>
+        <div>Enter the phone number you wish to chat with and click "Start Conversation".</div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    Made with ❤️ and 🎧 by <a href="https://github.com/droyson" target="_blank" rel="noopener noreferrer">@droyson</a>
+  </footer>
+  <script src="/js/main.js" type="text/javascript" async defer></script>
+  <script src="/js/countryCode.js" type="text/javascript" async defer></script>
+  <style>
+    footer {
+      width: 100%;
+      text-align: center;
+      height: 24px;
+      background-color: #ece5dd;
+      color: #3c3c3c;
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    footer a {
+      font-size: 14px;
+    }
+  </style>
+</body>
+
+</html>
