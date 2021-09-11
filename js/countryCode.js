@@ -1,8 +1,8 @@
 (function () {
-  fetch('https://api.myip.com').then(function (response) {
+  fetch('https://wa-api.droyson.xyz/').then(function (response) {
     return response.json()
   }).then(function (data) {
-    var alpha = data.cc
+    var alpha = data.countryCode
     return fetch('https://restcountries.eu/rest/v2/alpha/'+alpha+'?fields=callingCodes')
   }).then(function (response) {
     return response.json()
